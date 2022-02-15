@@ -9,8 +9,8 @@ namespace Lecture18
 		private double capacity;
 
 
-		public Truck(Engine engine, GasTank gasTank, double capacity) :
-			base(engine, gasTank)
+		public Truck(Engine engine, GasTank gasTank, double capacity, string plateNumber) :
+			base(engine, gasTank, plateNumber)
 		{
 			this.capacity = capacity;
 		}
@@ -55,5 +55,16 @@ namespace Lecture18
 			}
 			loadAmount -= amount;
 		}
+
+		public override void Honk()
+        {
+			Console.WriteLine("Truck honk.");
+        }
+		public double UnloadAll()
+        {
+			double amount = loadAmount;
+			loadAmount = 0;
+			return amount;
+        }
 	}
 }
